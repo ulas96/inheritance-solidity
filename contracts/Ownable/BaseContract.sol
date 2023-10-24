@@ -13,3 +13,9 @@ contract Ownable {
         _;
     }
 }
+
+contract Transferable is Ownable {
+    function transfer(address newOwner) public onlyOwner {
+        owner = newOwner;
+    }
+}
